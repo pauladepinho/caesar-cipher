@@ -1,0 +1,35 @@
+1- fazer requisição http para a url abaixo:
+https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=SEU_TOKEN
+SEU_TOKEN: 5860dbfd272c62443befc9e3de1fafb87a9e3f80
+https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=5860dbfd272c62443befc9e3de1fafb87a9e3f80
+
+o resultado da requisição será um json como:
+{
+	"numero_casas": 10, // usar para decifrar o texto
+	"token":"token_do_usuario",
+	"cifrado": "texto criptografado",
+	"decifrado": "aqui vai o texto decifrado", // o arquivo JSON será atualizado com o texto decifrado aqui!
+	"resumo_criptografico": "aqui vai o resumo" // e depois novamente com o resumo aqui!
+}
+
+2- o conteúdo deve ser salvo no arquivo answer.json
+
+3- usar # casas para DECIFRAR o texto CIFRADO
+
+4- ATUALIZAR o campo decifrado do JSON
+
+5- gerar um RESUMO criptográfico do texto decifrado usando o algoritmo sha1 e
+
+6- ATUALIZAR novamente o arquivo JSON.
+
+(obs.: você pode usar qualquer biblioteca de criptografia 
+da sua linguagem de programação favorita para gerar 
+o resumo sha1 do texto decifrado.)
+
+7- o programa deve submeter o arquivo JSON final
+via POST para a API:
+https://api.codenation.dev/v1/challenge/dev-ps/submit-solution?token=SEU_TOKEN
+
+(obs.: o arquivo JSON deve ser enviado como multipart/form-data, 
+como se fosse enviado por um formulário HTML, 
+com um campo do tipo file com o nome answer.)
